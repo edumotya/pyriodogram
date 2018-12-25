@@ -18,4 +18,6 @@ pip install nfft
 
 ## Example
 
+Extracted ndft features for an example of the plasticc dataset with object_id 612.
+
 ![Alt text](example.png?raw=true "NDFT features for plasticc dataset with object_id 612")
