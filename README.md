@@ -1,8 +1,10 @@
 # pyriodogram
 
+
 Python re-implementation of Fast calculation of the Lomb-Scargle periodogram using nonequispaced fast Fourier transforms [1]. Original code can be found at [2].
 
 [1] https://www.aanda.org/articles/aa/pdf/2012/09/aa19076-12.pdf
+
 [2] http://corot-be.obspm.fr/code.php
 
 ## Requisites
