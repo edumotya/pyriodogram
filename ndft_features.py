@@ -159,26 +159,35 @@ def extract(t, y, hifac=1, oversampling=5, tolerance=1e-8):
 
     return freqs, mag, phase, Pn, proba
 
-def plot(t, y, oversampling=5):
+def plot(t, y, oversampling=5, figsize=(12, 20)):
     """
     Plot ndft features extracted with ndft_features.
     """
     freqs, mag, phase, Pn, proba = extract(t, y, hifac=1, oversampling=oversampling)
-    fig, ax = plt.subplots(6, 1, figsize=(14, 12))
-    ax[0].scatter(t, y)
+    fig, ax = plt.subplots(6, 1, figsize=figsize)
+    ax[0].scatter(t, y, color='black')
     ax[0].set_title('Flux')
-    ax[1].plot(freqs, mag)
+    ax[0].set_xlabel('time [$mjd$]')
+    
+    ax[1].plot(freqs, mag, color='black')
     ax[1].set_title('Spectrum magnitude')
-    ax[2].plot(freqs, phase)
+    ax[1].set_xlabel('Freq [$mjd^{-1}$]')
+    
+    ax[2].plot(freqs, phase, color='black')
     ax[2].set_title('Spectrum phase')
-    ax[3].plot(1/freqs, Pn)
+    ax[2].set_xlabel('Freq [$mjd^{-1}$]')
+    
+    ax[3].plot(1/freqs, Pn, color='black')
     ax[3].set_title('LombScargle periodogram')
-    ax[4].plot(1/freqs, proba)
+    ax[3].set_xlabel('Period [$mjd$]')
+    
+    ax[4].plot(1/freqs, proba, color='black')
     ax[4].set_title('Periodogram true alarm probability')
+    ax[4].set_xlabel('Period [$mjd$]')
     # Estimated phase
     h = 1/freqs[np.argmax(Pn)]
     phase_hat = (t/h)%1
-    ax[5].scatter(phase_hat, y)
+    ax[5].scatter(phase_hat, y, color='black')
     ax[5].set_title('Phase from estimated period, where h=%.4f'%h)
     fig.tight_layout()
     return freqs, mag, phase, Pn, proba
