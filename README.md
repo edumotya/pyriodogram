@@ -18,6 +18,8 @@ pip install nfft
 
 ## Example
 
-Extracted ndft features for an example of the plasticc dataset with object_id 612.
+Extracted ndft features for an astronomical source in the plasticc dataset [4] with object_id 612.
 
 ![Alt text](example.png?raw=true "NDFT features for plasticc dataset with object_id 612")
+
+[4] https://www.kaggle.com/c/PLAsTiCC-2018
