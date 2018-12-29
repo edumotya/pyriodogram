@@ -91,8 +91,8 @@ def _true_alarm_prob(Pn, n, N, oversampling):
     
 def extract(t, y, hifac=1, oversampling=5, tolerance=1e-8):
     """
-    Computes ndft features. Either the magnitude and phase of the positive
-    side of the spectrum or the the Lomb-Scargle normalised periodogram of
+    Computes ndft features. The magnitude and phase of the positive
+    side of the spectrum and the Lomb-Scargle normalised periodogram of
     the input time series.
     Args:
         t: the observation times.
